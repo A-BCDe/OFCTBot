@@ -2,7 +2,7 @@
 
 ## How to compile
 Make sure you have [git][https://git-scm.com], [CMake][https://cmake.org], [OpenSSL][https://slproweb.com/products/Win32OpenSSL.html] and some c++ compiler installed in your computer. The instruction below is known to work with:
-* Windows 10
+* Microsoft Visual C++ 14.24
 
 1. Open the terminal or command prompt and enter `git clone https://github.com/A-BCDe/OFCTBot.git`
 2. `cd OFCTBot`
