@@ -12,6 +12,7 @@ add_executable(
     main.cpp
     include/error.hpp
     include/ofct_bot.hpp
+    src/ofct_bot.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} sleepy-discord)
