@@ -1,6 +1,6 @@
 # OFCTBot
 
-## How to compile
+## How to compile and run
 Make sure you have [git](https://git-scm.com), [CMake](https://cmake.org), [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) and some c++ compiler installed in your computer. The instruction below is known to work with:
 * Microsoft Visual C++ 14.24
 * g++ 7.4.0
@@ -11,5 +11,5 @@ Make sure you have [git](https://git-scm.com), [CMake](https://cmake.org), [Open
 4. `mkdir build`
 5. `cd build`
 6. `cmake ..`
-7. If you are using Visual Studio, `start OFCTBot_ver2.sln`, then set project `OFCTBot_ver2` as a startup project, and compile.
+7. If you are using Visual Studio, `start OFCTBot_ver2.sln`, then set project `OFCTBot_ver2` as a startup project, and compile and run.
   If you are using g++ with make, `make`, then `./OFCTBot_ver2`.
