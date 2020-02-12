@@ -3,10 +3,13 @@
 
 #include <cinttypes>
 
-enum error_enum : int32_t {
+enum class ERROR_ENUM : int {
     NONE = 0,
-    OPTION_ERROR,
-    NO_FILE_EXISTS_ERROR
+    PROGRAM_OPTION_ERROR,
+    NO_FILE_EXISTS_ERROR,
+    BOTINFO_FILE_PARSING_ERROR,
+    BOTTOKEN_UNDECLARED_ERROR,
+    PREFIX_UNDECLARED_ERROR
 };
 
 #endif
