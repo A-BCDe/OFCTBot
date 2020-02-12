@@ -62,9 +62,9 @@ namespace OFCT {
 				preoption_roll,
 				tao::pegtl::opt<spaces, digits>
 			> {};
-			struct cmd_csat : preoption_csat {};
-			struct cmd_daily : preoption_daily {};
-			struct cmd_pay : preoption_pay {};
+			struct cmd_csat : tao::pegtl::seq<preoption_csat> {};
+			struct cmd_daily : tao::pegtl::seq<preoption_daily> {};
+			struct cmd_pay : tao::pegtl::seq<preoption_pay> {};
 			struct cmd_slot : tao::pegtl::seq<
 				preoption_slot, spaces,
 				param_slot_bet, spaces,
@@ -83,8 +83,8 @@ namespace OFCT {
 				preoption_rankingl,
 				tao::pegtl::opt<spaces, param_rankingl_top>
 			> {};
-			struct cmd_mission : preoption_mission {};
-			struct cmd_missioninfo : preoption_missioninfo {};
+			struct cmd_mission : tao::pegtl::seq<preoption_mission> {};
+			struct cmd_missioninfo : tao::pegtl::seq<preoption_missioninfo> {};
 
 			struct command : tao::pegtl::sor<
 				cmd_help,
