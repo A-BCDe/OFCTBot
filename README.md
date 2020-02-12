@@ -1,7 +1,7 @@
 # OFCTBot
 
 ## How to compile and run
-Make sure you have [git](https://git-scm.com), [CMake](https://cmake.org), [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) and some c++ compiler installed in your computer. The instruction below is known to work with:
+Make sure you have [git](https://git-scm.com), [CMake](https://cmake.org), OpenSSL([windows](https://slproweb.com/products/Win32OpenSSL.html), [linux](https://www.openssl.org/source/)) and some c++ compiler installed in your computer. The instruction below is known to work with:
 * Microsoft Visual C++ 14.24
 * g++ 7.4.0
 
