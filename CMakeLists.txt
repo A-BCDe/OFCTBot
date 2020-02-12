@@ -23,6 +23,10 @@ add_executable(
     # BotInfo parsing
     include/BotInfoParser/grammar.hpp
     include/BotInfoParser/action.hpp
+
+    # Message parsing
+    include/MessageParser/grammar.hpp
+    include/MessageParser/action.hpp
 )
 
 target_link_libraries(${PROJECT_NAME}
