@@ -6,8 +6,8 @@ Make sure you have [git](https://git-scm.com), [CMake](https://cmake.org), OpenS
 * g++ 7.4.0
 
 1. Open the terminal or command prompt and enter `git clone https://github.com/A-BCDe/OFCTBot.git`
-2. `git clone https://github.com/taocpp/PEGTL.git`
-3. `cd OFCTBot`
+2. `cd OFCTBot`
+3. `git clone https://github.com/taocpp/PEGTL.git`
 4. `git clone https://github.com/yourWaifu/sleepy-discord.git`
 5. `mkdir build`
 6. `cd build`
