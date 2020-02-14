@@ -8,7 +8,32 @@ namespace OFCT {
 	ofct_bot::_##preop(SleepyDiscord::Message const& message, OFCT::MessageParser::option_stack& os)
 
 	_COMMAND_FUNCTION_DEF(help) {
-		return sendMessage(message.channelID, "You called help!");
+		if (os.empty()) {
+			return sendMessage(message.channelID,
+				std::string("This is OFCT Bot! Command prefix is ") + prefix.data() + ".\\n" +
+				"The following are the commands:\\n" +
+				"help : shows this message.\\n" +
+				"help <command> : shows the help about the command."
+				"info : shows your info.\\n" +
+				"info <username> : shows the info about the specific user.\\n" +
+				"roll : rolls a die with face 1 to 100.\\n" +
+				"roll <number> : rolls a die with face 1 to <number>.\\n" +
+				"csat : shows the time left until College SAT.\\n" +
+				"daily : gives you the daily experience (20).\\n" +
+				"pay : withdraws all the money from your account.\\n" +
+				"slot <bet> <times> : rolls a slot machine for a given bet for a given number of times.\\n" +
+				"transfer <amount> <username> : give away given amount of money to the specific user from your account.\\n" +
+				"rankingm : shows the rank of money in the account of 9 users near you.\\n" +
+				"rankingm top : shows the top 9 ranking of money of users.\\n" +
+				"rankingl : shows the rank of experience of 9 users near you.\\n" +
+				"rankingl top : shows the top 9 ranking of experience of users.\\n" +
+				"mission : analyzes your recent play within 24 hours and gives you the experience in the mission period.\\n" +
+				"missioninfo : shows the status of your mission progress.\\n"
+			);
+		}
+		else {
+			return sendMessage(message.channelID, "You called help!");
+		}
 	}
 	_COMMAND_FUNCTION_DEF(info) {
 		return sendMessage(message.channelID, "You called info!");
