@@ -13,7 +13,7 @@ namespace OFCT {
 				std::string("This is OFCT Bot! Command prefix is ") + prefix.data() + ".\\n" +
 				"The following are the commands:\\n" +
 				"help : shows this message.\\n" +
-				"help <command> : shows the help about the command."
+				"help <command> : shows the help about the command.\\n"
 				"info : shows your info.\\n" +
 				"info <username> : shows the info about the specific user.\\n" +
 				"roll : rolls a die with face 1 to 100.\\n" +
@@ -28,11 +28,89 @@ namespace OFCT {
 				"rankingl : shows the rank of experience of 9 users near you.\\n" +
 				"rankingl top : shows the top 9 ranking of experience of users.\\n" +
 				"mission : analyzes your recent play within 24 hours and gives you the experience in the mission period.\\n" +
-				"missioninfo : shows the status of your mission progress.\\n"
+				"missioninfo : shows the progress of your mission.\\n"
 			);
 		}
 		else {
-			return sendMessage(message.channelID, "You called help!");
+			assert(os.size() == 1);
+			auto const cmd = os.top(); os.pop();
+			if (cmd == "help") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "help [command]\\n" +
+					"The command shows the usage of which commands are available." +
+					"If you additionally add the [command] next to the command, the message of how to use the command will appear."
+				);
+			}
+			else if (cmd == "info") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "info [username]\\n" +
+					"The command shows the info of you or the user mentioned, such as experience, etc.."
+				);
+			}
+			else if (cmd == "roll") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "roll [number]\\n" +
+					"The command rolls the die with faces 1 to the given number.\\n" +
+					"Default number is 100."
+				);
+			}
+			else if (cmd == "csat") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "csat\\n" +
+					"The command shows the date left until the College SAT."
+				);
+			}
+			else if (cmd == "daily") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "daily\\n" +
+					"The command gives you the experience."
+				);
+			}
+			else if (cmd == "pay") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "pay\\n" +
+					"The command withdraws the money from your account for you."
+				);
+			}
+			else if (cmd == "slot") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "slot <bet> <times>\\n" +
+					"The command runs a slot machine for a given amount of times with a given bet from your account."
+				);
+			}
+			else if (cmd == "transfer") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "transfer <amount> <username>\\n" +
+					"The command sends your money to other user."
+				);
+			}
+			else if (cmd == "rankingm") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "rankingm (top)\\n" +
+					"The command shows your money ranking and 8 more users near you.\\n" +
+					"If you add \'top\', then the command will show top 9 users."
+				);
+			}
+			else if (cmd == "rankingl") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "rankingl (top)\\n" +
+					"The command shows your experience ranking and 8 more users near you.\\n" +
+					"If you add \'top\', then the command will show top 9 users."
+				);
+			}
+			else if (cmd == "mission") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "mission\\n" +
+					"The command analyzes your recent(~24h) play to give you experience in the mission period."
+				);
+			}
+			else if (cmd == "missioninfo") {
+				return sendMessage(message.channelID,
+					std::string("Usage : ") + prefix.data() + "missioninfo\\n" +
+					"The command shows the progress of your mission."
+				);
+			}
+			return sendMessage(message.channelID, "You called help, but something unexpected happened!");
 		}
 	}
 	_COMMAND_FUNCTION_DEF(info) {

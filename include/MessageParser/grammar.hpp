@@ -52,7 +52,7 @@ namespace OFCT {
 
 			struct cmd_help : tao::pegtl::seq<
 				preoption_help,
-				tao::pegtl::opt<param_help_preoption>
+				tao::pegtl::opt<spaces, param_help_preoption>
 			> {};
 			struct cmd_info : tao::pegtl::seq<
 				preoption_info,

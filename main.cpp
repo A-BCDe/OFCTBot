@@ -30,12 +30,14 @@ ERROR_ENUM get_info_from_file(std::string& bot_token, std::string& server_id, st
 	
 	tao::pegtl::memory_input in(in_file, "");
 	if (!tao::pegtl::parse<grammar, bot_parsing_action>(in, field, fm)) {
+		std::cerr << "Error while parsing " << file_path << "." << std::endl;
 		return ERROR_ENUM::BOTINFO_FILE_PARSING_ERROR;
 	}
 
 	// Done parsing _BotInfo
 
 	if ((bot_token = fm[Field::BotToken]) == "") {
+		std::cerr << "BotToken in " << file_path << " is not declared." << std::endl;
 		return ERROR_ENUM::BOTTOKEN_UNDECLARED_ERROR;
 	}
 	server_id = fm[Field::ServerID];
