@@ -13,7 +13,7 @@ namespace OFCT {
 				std::string("This is OFCT Bot! Command prefix is ") + prefix.data() + ".\\n" +
 				"The following are the commands:\\n" +
 				"help : shows this message.\\n" +
-				"help <command> : shows the help about the command.\\n"
+				"help <command> : shows the help about the command.\\n" +
 				"info : shows your info.\\n" +
 				"info <username> : shows the info about the specific user.\\n" +
 				"roll : rolls a die with face 1 to 100.\\n" +
