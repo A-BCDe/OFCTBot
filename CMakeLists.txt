@@ -27,6 +27,16 @@ add_executable(
     # Message parsing
     include/MessageParser/grammar.hpp
     include/MessageParser/action.hpp
+
+    # User management
+    include/User/user_manager.hpp
+    src/User/user_manager.cpp
+    include/User/user_base.hpp
+    src/User/user_base.cpp
+    include/User/user_bot.hpp
+    src/User/user_bot.cpp
+    include/User/user_human.hpp
+    src/User/user_human.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
