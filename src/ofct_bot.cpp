@@ -117,7 +117,16 @@ namespace OFCT {
 		return sendMessage(message.channelID, "You called info!");
 	}
 	_COMMAND_FUNCTION_DEF(roll) {
-		return sendMessage(message.channelID, "You called roll!");
+		std::random_device rd;
+		std::mt19937_64 rnd(rd());
+		std::cout << os.size() << std::endl;
+		if (os.empty()) {
+			std::uniform_int_distribution<int> dist(1, 100);
+			return sendMessage(message.channelID, message.author.username + " rolls " + std::to_string(dist(rnd)) + "point(s)!");
+		}
+		assert(os.size() == 1);
+		std::uniform_int_distribution<unsigned long long> dist(1, std::stoull(os.top()));
+		return sendMessage(message.channelID, message.author.username + " rolls " + std::to_string(dist(rnd)) + "point(s)!");
 	}
 	_COMMAND_FUNCTION_DEF(csat) {
 		return sendMessage(message.channelID, "You called csat!");

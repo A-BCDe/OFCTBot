@@ -60,7 +60,7 @@ namespace OFCT {
 			> {};
 			struct cmd_roll : tao::pegtl::seq<
 				preoption_roll,
-				tao::pegtl::opt<spaces, digits>
+				tao::pegtl::opt<spaces, param_roll_number>
 			> {};
 			struct cmd_csat : tao::pegtl::seq<preoption_csat> {};
 			struct cmd_daily : tao::pegtl::seq<preoption_daily> {};
